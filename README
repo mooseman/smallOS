@@ -1,0 +1,24 @@
+
+***  README -   smallOS  ***  
+
+smallOS is a public-domain operating system based on the 
+MMURTL public-domain OS (which was written by 
+Richard A. Burgess. )  
+Many thanks to Richard for writing that OS.  
+
+MMURTL can be found here -  
+http://www.ipdatacorp.com/mmpd.html  
+
+********************************************
+
+I am now in the process of removing the old copyright 
+notices from the source code.  These no longer apply 
+( since Richard has now released the code as public-domain, 
+as can be seen on the above website. ). 
+As the files are amended, I will upload them 
+
+The smallOS source code is released to the public domain. 
+"Share and enjoy....."   ;) 
+
+- mooseman 
+
