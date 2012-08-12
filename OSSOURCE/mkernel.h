@@ -1,24 +1,21 @@
 /* MKernel.h   MMURTL OS KERNEL PROTOTYPES */
 
-/* 
-
-   MMURTL Operating System Source Code
-   Written by  Richard A. Burgess
+/*   MMURTL Operating System Source Code  */ 
+/*   Written by  Richard A. Burgess                   */ 
  
-   This code is released to the public domain. 
-   "Share and enjoy....."   ;) 
+/*   This code is released to the public domain.    */ 
+/*    "Share and enjoy....."   ;)                                  */ 
 
-*/
 
-extern far long AllocExch(long *pExchRet);
+extern long AllocExch(long *pExchRet);
 
-extern far long DeAllocExch(long Exch);
+extern long DeAllocExch(long Exch);
 
-extern far long GetTSSExch(unsigned long  *pExchRet);
+extern long GetTSSExch(unsigned long  *pExchRet);
 
-extern far long SetPriority(long bPriority);
+extern long SetPriority(long bPriority);
 
-extern far long NewTask(long JobNum,
+extern long NewTask(long JobNum,
 					   long CodeSeg,
 					   long Priority,
 					   long fDebug,
@@ -26,21 +23,21 @@ extern far long NewTask(long JobNum,
 					   unsigned long ESP,
 					   unsigned long EIP);
 
-extern far SpawnTask(char *pEntry,
+extern SpawnTask(char *pEntry,
 		             long dPriority,
                      long fDebug,
                      char *pStack,
            		     long fOSCode);
 
-extern far long SendMsg(long Exch, long msg1, long msg2);
+extern long SendMsg(long Exch, long msg1, long msg2);
 
-extern far long ISendMsg(long Exch, long msg1, long msg2);
+extern long ISendMsg(long Exch, long msg1, long msg2);
 
-extern far long WaitMsg(long Exch, char *pMsgRet);
+extern long WaitMsg(long Exch, char *pMsgRet);
 
-extern far long CheckMsg(long Exch, char *pMsgRet);
+extern long CheckMsg(long Exch, char *pMsgRet);
 
-extern far long Request(unsigned char *pSvcName,
+extern long Request(unsigned char *pSvcName,
 						unsigned int  wSvcCode,
 						unsigned long dRespExch,
 						unsigned long *pRqHndlRet,
@@ -53,9 +50,9 @@ extern far long Request(unsigned char *pSvcName,
 						unsigned long dData1,
 						unsigned long dData2);
 
-extern far long MoveRequest(long dRqBlkHndl, long dDestExch);
+extern long MoveRequest(long dRqBlkHndl, long dDestExch);
 
-extern far long Respond(long dRqHndl, long dStatRet);
+extern long Respond(long dRqHndl, long dStatRet);
 
 struct RqBlkType {			/* 64 byte Request block structure */
 	long ServiceExch;
@@ -79,4 +76,6 @@ struct RqBlkType {			/* 64 byte Request block structure */
 	};
 
 
-/******* End of MKernel.h ******/
+/******* End of MKernel.h ******/  
+
+

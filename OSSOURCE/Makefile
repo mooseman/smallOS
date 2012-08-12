@@ -9,10 +9,14 @@
 
 CC = gcc
 
-#  Use the dasm assembler 
+#  Use the dasm assembler. 
 AS = dasm  
 
 CFLAGS = -O2 -Wall -g $(DEFINES)
+
+#  Assembly flags. 
+ASFLAGS = -e 
+
 # INCPATH = -I.
 INCPATH = .  
 LDFLAGS = $(SYSLDFLAGS) $(MYLDFLAGS)

@@ -10,14 +10,14 @@
 
 */
 
-extern far long Alarm(long Exch, long count);
-extern far long KillAlarm(long Exch);
-extern far long Sleep(long count);
-extern far void MicroDelay(long us15count);
-extern far long GetCMOSTime(long *pTimeRet);
-extern far long GetCMOSDate(long *pTimeRet);
-extern far long GetTimerTick(long *pTickRet);
-extern far void Tone(long freq, long ms10);
-extern far void Beep(void);
+extern long Alarm(long Exch, long count);
+extern long KillAlarm(long Exch);
+extern long Sleep(long count);
+extern void MicroDelay(long us15count);
+extern long GetCMOSTime(long *pTimeRet);
+extern long GetCMOSDate(long *pTimeRet);
+extern long GetTimerTick(long *pTickRet);
+extern void Tone(long freq, long ms10);
+extern void Beep(void);
 
 /************ End of MTimer.h ***************/

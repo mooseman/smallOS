@@ -11,11 +11,16 @@ http://www.ipdatacorp.com/mmpd.html
 
 ********************************************
 
-I am now in the process of removing the old copyright 
-notices from the source code.  These no longer apply 
-( since Richard has now released the code as public-domain, 
-as can be seen on the above website. ). 
-As the files are amended, I will upload them 
+******  STATUS   (as at 12th Aug 2012)   ******  
+DASM makefile is finished.  
+smallos makefile not quite finished, but it can still get you 
+a fair way along.  
+
+When running make, I have got as far as this error in jobc.c  
+(which I am unable to fix) -  
+jobc.c:677:16: error: invalid operands to binary + (have ‘char *’ and ‘char *’)   
+********************************************  
+
 
 The smallOS source code is released to the public domain. 
 "Share and enjoy....."   ;) 

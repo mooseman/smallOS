@@ -10,6 +10,6 @@
 
 */
 
-extern far long ReadKbd(unsigned long *pKeyCodeRet, unsigned long fWait);
+extern long ReadKbd(unsigned long *pKeyCodeRet, unsigned long fWait);
 
 /****** End of Module ******/

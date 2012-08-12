@@ -75,34 +75,34 @@ you want together */
 
 /* MMURTL Basic Video calls */
 
-extern far long SetVidOwner(long JobNum);
-extern far long SetNormVid(long dAttr);
-extern far long GetNormVid(long *pNormVidRet);
-extern far long ClrScr(void);
-extern far long GetVidChar(long ddCol,
+extern long SetVidOwner(long JobNum);
+extern long SetNormVid(long dAttr);
+extern long GetNormVid(long *pNormVidRet);
+extern long ClrScr(void);
+extern long GetVidChar(long ddCol,
                         long ddLine,
 					    char *pCharRet,
 					    char *pAttrRet);
-extern far long SetXY(long NewX, long NewY);
-extern far long PutVidAttrs(long ddCol,
+extern long SetXY(long NewX, long NewY);
+extern long PutVidAttrs(long ddCol,
                          long ddLine,
 						 long sChars,
 						 long dAttr);
-extern far long PutVidChars(long ddCol,
+extern long PutVidChars(long ddCol,
                          long ddLine,
 						 char *pChars,
 						 long sChars,
 						 long ddAttrib);
-extern far long GetVidOwner(long *pdVidNumRet);
-extern far long GetXY(long *pXRet, long *pYRet);
-extern far long ScrollVid(long ddULCol,
+extern long GetVidOwner(long *pdVidNumRet);
+extern long GetXY(long *pXRet, long *pYRet);
+extern long ScrollVid(long ddULCol,
                           long ddULline,
                           long nddCols,
                           long nddLines,
                           long ddfUp);
-extern far long TTYOut (char *pTextOut, long ddTextOut, long ddAttrib);
+extern long TTYOut (char *pTextOut, long ddTextOut, long ddAttrib);
 
-extern far long EditLine(unsigned char *pStr,
+extern long EditLine(unsigned char *pStr,
 						 unsigned long dCrntLen,
 						 unsigned long dMaxLen,
 						 unsigned long *pdLenRet,

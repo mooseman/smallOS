@@ -50,40 +50,40 @@ struct JCBRec {
 	unsigned char 	ScrlCnt;			/* Count since last pause  */
 	char 			fVidPause;			/* Full screen pause (Text mode) */
 	long 			NextJCB;			/* OS Uses to allocate JCBs */
-	char JcbRsvd1[512-22-24-360-36-8]	/* Padded to 512 */
+	char JcbRsvd1[512-22-24-360-36-8];	/* Padded to 512 */
 	};
 
-extern far long GetpJCB(long dJobNum, char *pJCBRet);
-extern far long GetJobNum(long *pJobNumRet);
-extern far long LoadNewJob(char *pFileName, long cbFileName, long *pJobNumRet);
-extern far long Chain(char *pFileName, long cbFileName, long dExitError);
-extern far void ExitJob(long dError);
-extern far void KillJob(long JubNum);
+extern long GetpJCB(long dJobNum, char *pJCBRet);
+extern long GetJobNum(long *pJobNumRet);
+extern long LoadNewJob(char *pFileName, long cbFileName, long *pJobNumRet);
+extern long Chain(char *pFileName, long cbFileName, long dExitError);
+extern void ExitJob(long dError);
+extern void KillJob(long JubNum);
 
-extern far long SetUserName(char *pUser, long dcbUser);
-extern far long GetUserName(char *pUserRet, long *pdcbUserRet);
+extern long SetUserName(char *pUser, long dcbUser);
+extern long GetUserName(char *pUserRet, long *pdcbUserRet);
 
-extern far long SetCmdLine(char *pCmd, long dcbCmd);
-extern far long GetCmdLine(char *pCmdRet, long *pdcbCmdRet);
+extern long SetCmdLine(char *pCmd, long dcbCmd);
+extern long GetCmdLine(char *pCmdRet, long *pdcbCmdRet);
 
-extern far long SetPath(char *pPath, long dcbPath);
-extern far long GetPath(long JobNum, char *pPathRet, long *pdcbPathRet);
+extern long SetPath(char *pPath, long dcbPath);
+extern long GetPath(long JobNum, char *pPathRet, long *pdcbPathRet);
 
-extern far long SetExitJob(char *pRunFile, long dcbRunFile);
-extern far long GetExitJob(char *pRunRet, long *pdcbRunRet);
+extern long SetExitJob(char *pRunFile, long dcbRunFile);
+extern long GetExitJob(char *pRunRet, long *pdcbRunRet);
 
-extern far long SetSysIn(char *pFile, long dcbFile);
-extern far long GetSysIn(char *pFileRet, long *pdcbFileRet);
+extern long SetSysIn(char *pFile, long dcbFile);
+extern long GetSysIn(char *pFileRet, long *pdcbFileRet);
 
-extern far long SetSysOut(char *pFile, long dcbFile);
-extern far long GetSysOut(char *pFileRet, long *pdcbFileRet);
+extern long SetSysOut(char *pFile, long dcbFile);
+extern long GetSysOut(char *pFileRet, long *pdcbFileRet);
 
-extern far long SetJobName(char *pName, long dcbName);
+extern long SetJobName(char *pName, long dcbName);
 
-extern far long RegisterSvc(char *pName, unsigned long Exch);
+extern long RegisterSvc(char *pName, unsigned long Exch);
 
-extern far long UnRegisterSvc(char *pName);
+extern long UnRegisterSvc(char *pName);
 
-extern far long GetSystemDisk(unsigned char *pDiskRet);
+extern long GetSystemDisk(unsigned char *pDiskRet);
 
 /****** End of Job.h *******/

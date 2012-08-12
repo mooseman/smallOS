@@ -41,14 +41,14 @@
 #define TRUE 1
 #define FALSE 1
 
-#include "MKernel.h"
-#include "MMemory.h"
-#include "MData.h"
-#include "MTimer.h"
-#include "MVid.h"
-#include "MKbd.h"
-#include "MJob.h"
-#include "MFiles.h"
+#include "mkernel.h"
+#include "mmemory.h"
+#include "mdata.h"
+#include "mtimer.h"
+#include "mvid.h"
+#include "mkbd.h"
+#include "mjob.h"
+#include "mfiles.h"
 
 #include "runfile.h"
 
@@ -93,7 +93,7 @@ static long JobNumE, job_fhE;
 static long ExchE, ercE, iE;
 static long BogusMsg[2];
 static long *pPDE;
-static char *pExchJCBE
+static char *pExchJCBE;
 static long KeyCodeE;
 
 static char aFileE[80];
@@ -283,7 +283,7 @@ char fDone, junk;
 /********************************************************/
 
 /**************************************************/
-long far _SetExitJob(char *pRunFile, long dcbRunFile)
+long _SetExitJob(char *pRunFile, long dcbRunFile)
 {
 long JobNum;
 
@@ -301,7 +301,7 @@ long JobNum;
 }
 
 /**************************************************/
-long far _GetExitJob(char *pRunRet, long *pdcbRunRet)
+long _GetExitJob(char *pRunRet, long *pdcbRunRet)
 {
 long JobNum, i;
 
@@ -315,7 +315,7 @@ long JobNum, i;
 }
 
 /**************************************************/
-long far _SetPath(char *pPath, long dcbPath)
+long _SetPath(char *pPath, long dcbPath)
 {
 long JobNum;
 
@@ -333,7 +333,7 @@ long JobNum;
 }
 
 /**************************************************/
-long far _GetPath(long JobNum, char *pPathRet, long *pdcbPathRet)
+long _GetPath(long JobNum, char *pPathRet, long *pdcbPathRet)
 {
 long i, erc;
 
@@ -347,7 +347,7 @@ long i, erc;
 	return(erc);
 }
 /**************************************************/
-long far _SetCmdLine(char *pCmd, long dcbCmd)
+long _SetCmdLine(char *pCmd, long dcbCmd)
 {
 long JobNum;
 
@@ -365,7 +365,7 @@ long JobNum;
 }
 
 /**************************************************/
-long far _GetCmdLine(char *pCmdRet, long *pdcbCmdRet)
+long _GetCmdLine(char *pCmdRet, long *pdcbCmdRet)
 {
 long JobNum, i;
 
@@ -380,7 +380,7 @@ long JobNum, i;
 
 
 /**************************************************/
-long far _SetUserName(char *pUser, long dcbUser)
+long _SetUserName(char *pUser, long dcbUser)
 {
 long JobNum;
 
@@ -398,7 +398,7 @@ long JobNum;
 }
 
 /**************************************************/
-long far _GetUserName(char *pUserRet, long *pdcbUserRet)
+long _GetUserName(char *pUserRet, long *pdcbUserRet)
 {
 long JobNum, i;
 
@@ -412,7 +412,7 @@ long JobNum, i;
 }
 
 /**************************************************/
-long far _SetSysIn(char *pName, long dcbName)
+long _SetSysIn(char *pName, long dcbName)
 {
 long JobNum;
 
@@ -428,7 +428,7 @@ long JobNum;
 }
 
 /**************************************************/
-long far _GetSysIn(char *pFileRet, long *pdcbFileRet)
+long _GetSysIn(char *pFileRet, long *pdcbFileRet)
 {
 long JobNum, i;
 
@@ -442,7 +442,7 @@ long JobNum, i;
 }
 
 /**************************************************/
-long far _SetSysOut(char *pName, long dcbName)
+long _SetSysOut(char *pName, long dcbName)
 {
 long JobNum;
 
@@ -458,7 +458,7 @@ long JobNum;
 }
 
 /**************************************************/
-long far _GetSysOut(char *pFileRet, long *pdcbFileRet)
+long _GetSysOut(char *pFileRet, long *pdcbFileRet)
 {
 long JobNum, i;
 
@@ -472,7 +472,7 @@ long JobNum, i;
 }
 
 /**************************************************/
-long far _SetJobName(char *pName, long dcbName)
+long _SetJobName(char *pName, long dcbName)
 {
 long JobNum;
 	GetJobNum(&JobNum);
@@ -491,7 +491,7 @@ long JobNum;
   else an error is returned.
 *********************************************************/
 
-long far _LoadNewJob(char *pFileName, long cbFileName, long *pJobNumRet)
+long _LoadNewJob(char *pFileName, long cbFileName, long *pJobNumRet)
 {
 long erc, i, fh, dret, nPages;
 unsigned long *pPD, *pPT, *pVid, *pOSPD;
@@ -839,7 +839,7 @@ void _KillTask(void)
  to be killed.  A job may terminate itself with ExitJob().
 ******************************************************/
 
-long far _KillJob(long JobNum)
+long _KillJob(long JobNum)
 {
 long erc;
 	/* Make sure it's not the Monitor, Debugger or the current job. */
@@ -912,7 +912,7 @@ long erc;
  keyboard are assigned we assign them to the Monitor.
 ******************************************************/
 
-void far _ExitJob(long dError)
+void _ExitJob(long dError)
 {
 /* NO LOCAL VARIABLES BECAUSE WE SWITCH STACKS!! */
 
@@ -1054,7 +1054,7 @@ void far _ExitJob(long dError)
  ExitJob and pass it the error.
 ******************************************************/
 
-long far _Chain(char *pFileName, long cbFileName, long dExitError)
+long _Chain(char *pFileName, long cbFileName, long dExitError)
 {
 /* NO LOCAL VARIABLES BECAUSE WE SWITCH STACKS!! */
 
@@ -1211,3 +1211,6 @@ long far _Chain(char *pFileName, long cbFileName, long dExitError)
 }
 
 /*********************** End of Module *****************/
+
+
+
