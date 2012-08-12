@@ -1,3 +1,4 @@
+
 /*
  * D-Group Assembler for MMURTL (DOS Version).
  *
@@ -16,6 +17,7 @@
                10/29/94 Fix problem with sign extending bytes on ADD
   Version 1.6  12/31/94 - Removed temp files on succesful assemble
  */
+
 
 #define U32 unsigned long
 #define S32 long
@@ -66,14 +68,16 @@ U16 warn_count = 0;
 
 
  /* Max input line is 132, but 200 allows plenty for macro subs */
-S8 line_buf0[200];	/* Two buffers are swapped during macro substitution */
+S8 line_buf0[200];	/* Two buffers are swapped during macro 
+                  substitution */
 S8 line_buf1[200];
 S8 *line_ptr;		/* pointer to next char on line */
 
 S8 list_buf[200];	/* Used to hold line string for list file */
 S8 fLineIn =0;		/* TRUE is list_buf has something to list */
 
-S8 TString[133];	/* all parsed tokens are placed here in text form */
+S8 TString[133];	/* all parsed tokens are placed here in 
+                      text form */
 S16 CBString;		/* size of parsed token */
 S16  TSymnum;		/* Symbol table entry number, else 0 */
 U32  TNumber;		/* value of numeric token */
@@ -82,7 +86,8 @@ S16  TReg;			/* Register number, else 0 */
 S16  Token;			/* Token type (also returned from parse) */
 S8   fPutBack = 0;  /* TRUE (non=zero) if last token was not used */
 
-S8   LTString[133];	/* Duplicates of Token storage for ReturnToken(); */
+S8   LTString[133];	/* Duplicates of Token storage for 
+                       ReturnToken(); */
 S16  LCBString;
 S16  LTSymnum;
 U32  LTNumber;
@@ -90,7 +95,8 @@ S16  LTInst;
 S16  LTReg;
 S16  LToken;
 
-S8 UString[31];	/* Place to save unknown labels for Forward Reference */
+S8 UString[31];	/* Place to save unknown labels for 
+                   Forward Reference */
 S16 UCBString;		/* Size of Unknown label */
 
 /* The two Symbol tables have 5 entries;  Type, Size, Pointer to Name,
@@ -120,7 +126,8 @@ struct symtab {
 
 struct symtab gst[SYMSMAX];	/* storage for the GST */
 
-/* S8  SymBuf[SYMBUFMAX];	*/	/* Where names are stored. Will be Alloced */
+/* S8  SymBuf[SYMBUFMAX];	*/	/* Where names are stored. 
+                                   Will be Alloced */
 S8 *pSymBuf;				/* ptr to allocated buffer */
 
 S8   *pSymNext;		/* ptr to next new entry in symbol buffer */
@@ -179,10 +186,10 @@ S16 iLSymNext = 1;	/* index to next new symbol table entry.  */
 
 /* Types of forward references. */
 
-#define DSEGREF   1		/* 32 bit Abs Ref in DSeg, to what is unknown! */
-#define CSEGREF   2		/* 32 bit Abs Ref in CSeg, to what is unknown! */
-#define CCR32REF  3		/* 32 bit Relative in CSeg */
-#define CCR8REF   4		/* 8 bit Relative in CSeg */
+#define DSEGREF   1	 /* 32 bit Abs Ref in DSeg, to what is unknown! */
+#define CSEGREF   2	 /* 32 bit Abs Ref in CSeg, to what is unknown! */
+#define CCR32REF  3	 /* 32 bit Relative in CSeg */
+#define CCR8REF   4	 /* 8 bit Relative in CSeg */
 
 struct forreftab {
 	U8   Type;  	/* 1, 2, 3, or 4 */
@@ -395,7 +402,7 @@ struct tagtype tag;
 
 /* ANSI prototypes for all functions are in DProtos.h */
 
-#include "DProtos.h"
+#include "dprotos.h"
 
 
 /***************************************************************/
@@ -506,7 +513,7 @@ char b;
 
 /* All the "grunt work" functions are in dasmq.c */
 
-#include "DASMq.c"
+#include "dasmq.c"
 
 /*********************************************
 This searches the Reference table for the name
