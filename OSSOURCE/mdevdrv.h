@@ -11,25 +11,13 @@
 */
 
 
-extern long InitDevDr(long dDevNum,
-				    	  char *pDCBs,
-					  	  long nDevices,
-					  	  long dfReplace);
+extern long InitDevDr(long dDevNum, char *pDCBs, long nDevices, long dfReplace);
 
-extern long DeviceOp(unsigned long dDevice,
- 		                 unsigned long dOpNum,
-						 unsigned long dLBA,
-						 unsigned long dnBlocks,
-						 unsigned char  *pData);
+extern long DeviceOp(long dDevice, long dOpNum, long dLBA, long dnBlocks, char *pData);
 
-extern long DeviceStat(unsigned long dDevice,
-						   char  *pStatRet,
-						   unsigned long dStatusMax,
-						   unsigned long *pdSatusRet);
+extern long DeviceStat(long dDevice, char *pStatRet, long dStatusMax, long *pdSatusRet);
 
-extern long DeviceInit(unsigned long dDevNum,
-						   char *pInitData,
-						   unsigned long sdInitData);
+extern long DeviceInit(long dDevNum, *pInitData, long sdInitData);
 
 extern long UnMaskIRQ(long IRQNum);
 extern long MaskIRQ(long IRQNum);

@@ -22,11 +22,11 @@ struct JCBRec {
 	char			*pJcbPD;			/* Linear add of Job's PD (0=unused) */
 
 	char 			*pJcbCode;			/* User Address of code segment */
-	unsigned long	sJcbCode;			/* Size of user code segment */
+	long			sJcbCode;			/* Size of user code segment */
 	char			*pJcbData;			/* User Adresss of data segment */
-	unsigned long 	sJcbData;			/* Size of user data segment */
+	long 			sJcbData;			/* Size of user data segment */
 	char 			*pJcbStack;			/* User Addrees of first stack */
-	unsigned long	sJcbStack;			/* Size of user first stack */
+	long			sJcbStack;			/* Size of user first stack */
 
 	char 			sbUserName[30];		/* User Name for Job - LString */
 	char 			sbPath[70];			/* path name (prefix) - LString */
@@ -47,7 +47,7 @@ struct JCBRec {
 
 	char 			fCursOn;			/* FLAG 1 = Cursor is visible */
 	char 			fCursType;			/* FLAG	(0=UL, 1 = Block) */
-	unsigned char 	ScrlCnt;			/* Count since last pause  */
+	char 			ScrlCnt;			/* Count since last pause  */
 	char 			fVidPause;			/* Full screen pause (Text mode) */
 	long 			NextJCB;			/* OS Uses to allocate JCBs */
 	char JcbRsvd1[512-22-24-360-36-8];	/* Padded to 512 */
@@ -80,10 +80,10 @@ extern long GetSysOut(char *pFileRet, long *pdcbFileRet);
 
 extern long SetJobName(char *pName, long dcbName);
 
-extern long RegisterSvc(char *pName, unsigned long Exch);
+extern long RegisterSvc(char *pName, long Exch);
 
 extern long UnRegisterSvc(char *pName);
 
-extern long GetSystemDisk(unsigned char *pDiskRet);
+extern long GetSystemDisk(char *pDiskRet);
 
 /****** End of Job.h *******/

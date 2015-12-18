@@ -11,7 +11,7 @@ extern long AllocExch(long *pExchRet);
 
 extern long DeAllocExch(long Exch);
 
-extern long GetTSSExch(unsigned long  *pExchRet);
+extern long GetTSSExch(long  *pExchRet);
 
 extern long SetPriority(long bPriority);
 
@@ -20,8 +20,8 @@ extern long NewTask(long JobNum,
 					   long Priority,
 					   long fDebug,
 					   long Exch,
-					   unsigned long ESP,
-					   unsigned long EIP);
+					   long ESP,
+					   long EIP);
 
 extern SpawnTask(char *pEntry,
 		             long dPriority,
@@ -37,18 +37,18 @@ extern long WaitMsg(long Exch, char *pMsgRet);
 
 extern long CheckMsg(long Exch, char *pMsgRet);
 
-extern long Request(unsigned char *pSvcName,
-						unsigned int  wSvcCode,
-						unsigned long dRespExch,
-						unsigned long *pRqHndlRet,
-						unsigned long dnpSend,
-						unsigned char *pData1,
-						unsigned long dcbData1,
-						unsigned char *pData2,
-						unsigned long dcbData2,
-						unsigned long dData0,
-						unsigned long dData1,
-						unsigned long dData2);
+extern long Request(char *pSvcName,
+						int  wSvcCode,
+						long dRespExch,
+						long *pRqHndlRet,
+						long dnpSend,
+						char *pData1,
+						long dcbData1,
+						char *pData2,
+						long dcbData2,
+						long dData0,
+						long dData1,
+						long dData2);
 
 extern long MoveRequest(long dRqBlkHndl, long dDestExch);
 
@@ -63,7 +63,7 @@ struct RqBlkType {			/* 64 byte Request block structure */
 	long dData0;
 	long dData1;
 	long dData2;
-	short int  ServiceCode;
+	int  ServiceCode;
 	char npSend;
 	char npRecv;
 	char *pData1;

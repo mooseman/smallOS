@@ -102,11 +102,11 @@ extern long ScrollVid(long ddULCol,
                           long ddfUp);
 extern long TTYOut (char *pTextOut, long ddTextOut, long ddAttrib);
 
-extern long EditLine(unsigned char *pStr,
-						 unsigned long dCrntLen,
-						 unsigned long dMaxLen,
-						 unsigned long *pdLenRet,
-						 unsigned char *pbExitChar,
-						 unsigned long dEditAttr);
+extern long EditLine(char *pStr,
+						 long dCrntLen,
+						 long dMaxLen,
+						 long *pdLenRet,
+						 char *pbExitChar,
+						 long dEditAttr);
 
 /******* End of MVid.h ***************/

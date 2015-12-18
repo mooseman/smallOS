@@ -16,20 +16,20 @@
 */
 
 struct statRecL{
-  unsigned long lptJob;		/* Owner of this lpt port, 0 for not in use */
-  unsigned long LastErc;	/* Result of last device operation */
-  unsigned long LastTotal;	/* Total bytes moved in last operation */
-  unsigned char status;		/* Status Byte - Bits defined in Parallel.h */
-  unsigned long BufCnt;		/* Bytes left in buffer to send */
-  unsigned char resvd1;		/*  */
-  unsigned char resvd2;		/*  */
-  unsigned char resvd3;		/*  */
-  unsigned char IRQNum;		/* IRQNum for this channel */
-  unsigned long IOBase;		/* IO base address for hardware */
-  unsigned long XBufSize;	/* Size of Xmit buffer */
-  unsigned long XTimeOut;	/* Xmit Timeout in 10ms increments */
-  unsigned long resvd4;		/* Recv Timeout in 10ms increments */
-  unsigned long resvd[6];	/* out to 64 bytes */
+  long lptJob;		/* Owner of this lpt port, 0 for not in use */
+  long LastErc;	/* Result of last device operation */
+  long LastTotal;	/* Total bytes moved in last operation */
+  char status;		/* Status Byte - Bits defined in Parallel.h */
+  long BufCnt;		/* Bytes left in buffer to send */
+  char resvd1;		/*  */
+  char resvd2;		/*  */
+  char resvd3;		/*  */
+  char IRQNum;		/* IRQNum for this channel */
+  long IOBase;		/* IO base address for hardware */
+  long XBufSize;	/* Size of Xmit buffer */
+  long XTimeOut;	/* Xmit Timeout in 10ms increments */
+  long resvd4;		/* Recv Timeout in 10ms increments */
+  long resvd[6];	/* out to 64 bytes */
   };
 
 /* Device Driver interface commands (Op numbers)

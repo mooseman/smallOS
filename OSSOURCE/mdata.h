@@ -11,23 +11,15 @@
 */
 
 
-extern void CopyData(unsigned char *pSource,
-						 unsigned char *pDestination,
-						 unsigned long dBytes);
-extern void FillData(unsigned char  *pDest, 
-						 unsigned long cBytes,
-						 unsigned char  bFill);
-extern long CompareNCS(unsigned char  *pS1,
-						   unsigned char  *pS2,
-						   unsigned long dSize);
-extern long Compare(unsigned char *pS1,
-					    unsigned char *pS2,
-					    unsigned long dSize);
+extern void CopyData(char *pSource, char *pDestination, long dBytes);
+extern void FillData(char *pDest, long cBytes, char bFill);
+extern long CompareNCS(char *pS1, char *pS2, long dSize);
+extern long Compare(char *pS1, char *pS2, long dSize);
 
-extern void OutByte(unsigned char Byte, unsigned int wPort);
-extern void OutWord(unsigned int Word, unsigned int wPort);
-extern unsigned char InByte(unsigned int wPort);
-extern unsigned int InWord(unsigned int wPort);
-extern unsigned char ReadCMOS(unsigned int Address);
+extern void OutByte(char Byte, int wPort);
+extern void OutWord(int Word, int wPort);
+extern unsigned char InByte(int wPort);
+extern unsigned int InWord(int wPort);
+extern unsigned char ReadCMOS(int Address);
 
 /************ End of Module **********/

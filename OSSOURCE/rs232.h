@@ -31,20 +31,20 @@
 
 
 struct statRecC{
-  unsigned long commJob;	/* Owner of this comms port, 0 for not in use */
-  unsigned long LastErc;	/* Result of last device operation */
-  unsigned long LastTotal;	/* Total bytes moved in last operation */
-  unsigned long Baudrate;	/* Baudrate for this port, 150 - 38400 */
-  unsigned char parity; 	/* Parity for this port, 0=none, 1=even, 2=odd */
-  unsigned char databits;	/* nDatabits for this port, 5-8 */
-  unsigned char stopbits;	/* stop bits for this port, 1 or 2 */
-  unsigned char IRQNum;		/* IRQNum for this channel */
-  unsigned long IOBase;		/* IO base address for hardware */
-  unsigned long XBufSize;	/* Size of Xmit buffer */
-  unsigned long RBufSize;	/* Size of Recv Buffer */
-  unsigned long XTimeOut;	/* Xmit Timeout in 10ms increments */
-  unsigned long RTimeOut;	/* Recv Timeout in 10ms increments */
-  unsigned long resvd[6];	/* out to 64 bytes */
+  long commJob;	/* Owner of this comms port, 0 for not in use */
+  long LastErc;	/* Result of last device operation */
+  long LastTotal;	/* Total bytes moved in last operation */
+  long Baudrate;	/* Baudrate for this port, 150 - 38400 */
+  char parity; 	/* Parity for this port, 0=none, 1=even, 2=odd */
+  char databits;	/* nDatabits for this port, 5-8 */
+  char stopbits;	/* stop bits for this port, 1 or 2 */
+  char IRQNum;		/* IRQNum for this channel */
+  long IOBase;		/* IO base address for hardware */
+  long XBufSize;	/* Size of Xmit buffer */
+  long RBufSize;	/* Size of Recv Buffer */
+  long XTimeOut;	/* Xmit Timeout in 10ms increments */
+  long RTimeOut;	/* Recv Timeout in 10ms increments */
+  long resvd[6];	/* out to 64 bytes */
   };
 
 /* Device Driver interface commands (Op numbers) */

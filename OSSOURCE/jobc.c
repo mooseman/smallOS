@@ -494,7 +494,7 @@ long JobNum;
 long _LoadNewJob(char *pFileName, long cbFileName, long *pJobNumRet)
 {
 long erc, i, fh, dret, nPages;
-unsigned long *pPD, *pPT, *pVid, *pOSPD;
+long *pPD, *pPT, *pVid, *pOSPD;
 long *pFix;
 U32 PhyAdd;
 

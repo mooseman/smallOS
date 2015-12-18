@@ -38,7 +38,7 @@
 
 
 struct tagtype {
-	unsigned char id;
+	char id;
 	long len;
 	};
 
